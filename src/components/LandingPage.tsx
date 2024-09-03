@@ -3,7 +3,7 @@ import { Box, Button, Typography, Container, Grid } from '@mui/material';
 import Navbar from './Navbar';
 import rocket from '../assets/rocket.svg';
 import StatsSection from './StatsSection';
-import { useNavigate } from 'react-router-dom'; 
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage: React.FC = () => {
     const navigate = useNavigate();
@@ -72,7 +72,7 @@ const LandingPage: React.FC = () => {
                     </Grid>
                 </Container>
             </Box>
-            <StatsSection/>
+            <StatsSection />
         </>
     );
 };
