@@ -18,7 +18,7 @@ const LandingPage: React.FC = () => {
                     alignItems: 'center',
                     justifyContent: 'center',
                     backgroundColor: '#003145',
-                    padding: '40px 0', // Added padding to give some space around the content
+                    padding: '40px ', // Added padding to give some space around the content
                     textAlign: 'left',  // Align text to the left
                 }}
             >

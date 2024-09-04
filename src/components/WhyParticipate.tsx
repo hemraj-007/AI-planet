@@ -10,8 +10,9 @@ const WhyParticipate: React.FC = () => {
         <Box sx={{ padding: '60px 0', backgroundColor: '#ffffff' }}>
             <Container maxWidth="lg">
                 <Typography variant="h4" component="h2" sx={{ textAlign: 'center', mb: 6, fontWeight: 'bold' }}>
-                    Why Participate in <Typography component="span" sx={{ color: '#4caf50' }}>AI Challenges?</Typography>
+                    Why Participate in <Typography component="span" sx={{ color: '#4caf50', fontWeight: 'inherit' }} variant="inherit">AI Challenges?</Typography>
                 </Typography>
+
                 <Grid container spacing={4}>
                     <Grid item xs={12} md={6}>
                         <Card sx={{ boxShadow: 'none', backgroundColor: '#f9f9f9', height: '100%' }}>
