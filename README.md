@@ -1,50 +1,40 @@
-# React + TypeScript + Vite
+# Hackathon Frontend Project
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is the frontend interface for managing and participating in hackathons. It provides functionality for creating, scheduling, and exploring challenges, with a focus on responsive design and user experience.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **React**: Frontend framework for building dynamic user interfaces.
+- **TypeScript**: Provides static typing to JavaScript for better tooling and bug prevention.
+- **Material UI (MUI)**: For modern, responsive components.
+- **Vite**: Fast build tool for optimized development and production builds.
+- **React Router**: For routing and navigation within the app.
 
-## Expanding the ESLint configuration
+## Features
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **Create Hackathons**: Allows users to create and manage new hackathons.
+- **Explore Challenges**: Browse, filter, and search for challenges.
+- **Responsive UI**: Mobile-first, adaptive design with MUI components.
+- **Participate in Hackathons**: Easy-to-use interface for users to join hackathons.
+- **Filter System**: Powerful filters for sorting challenges based on status, level, etc.
+- **Fully Responsive**: The application is optimized for desktop and mobile devices, ensuring seamless functionality across different screen sizes.
 
-- Configure the top-level `parserOptions` property like this:
+## Installation
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+To get the project up and running locally, follow these steps:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Prerequisites
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+- **Node.js**: Ensure you have Node.js installed (version 14+).
+- **npm or yarn**: Package manager for handling dependencies.
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Steps
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/your-username/hackathon-frontend.git
+
+2. **npm install or yarn install**
+
+3. **Start the development server:**npm run dev
