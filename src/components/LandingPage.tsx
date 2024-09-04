@@ -48,12 +48,14 @@ const LandingPage: React.FC = () => {
                                 <Button
                                     variant="contained"
                                     sx={{
+                                        width:'198px',
                                         backgroundColor: '#fff',
                                         color: '#003145',
                                         padding: '10px 20px',
-                                        borderRadius: '20px',
+                                        borderRadius: '10px',
                                         textTransform: 'none',
                                         fontWeight: 'bold',
+                                        height:'47px'
                                     }}
                                     onClick={() => navigate('/create-challenge')}
                                 >

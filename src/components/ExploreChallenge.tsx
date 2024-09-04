@@ -56,7 +56,7 @@ const ExploreChallenges: React.FC = () => {
             image: challengeImage5, // Store the correct image path
         },
         {
-            title: 'Travel Insurance Claim Prediction',
+            title: 'Travel Insurance Claim Prediction and Policy',
             description: 'Analyze the employment outcomes of engineering graduates across various industries.',
             time: 'Ended on 16th May 2022 09:00 PM',
             status: 'Past',
