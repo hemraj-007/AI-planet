@@ -1,76 +1,150 @@
 import React from 'react';
-import { Typography, Container, TextField, Button, MenuItem } from '@mui/material';
+import { Box, Button, TextField, MenuItem, Typography } from '@mui/material';
 import Navbar from './Navbar';
+import uploadIcon from '../assets/upload.svg'
+import { useNavigate } from 'react-router-dom';
 
-const CreateChallenge: React.FC = () => {
+const ChallengeDetails: React.FC = () => {
+  const navigate=useNavigate();
+
+  const handleClick=()=>{
+    navigate('/')
+  }
+
   return (
     <>
-    <Navbar/>
-    <Container maxWidth="md" sx={{ mt: 5 }}>
-      <Typography variant="h4" component="h1" sx={{ mb: 4 }}>
-        Challenge Details
-      </Typography>
-      <form>
+      <Navbar />
+
+      {/* Challenge Details Header */}
+      <Box
+        sx={{
+          width: '100%',
+          backgroundColor: '#F8F9FD',
+          height: '100px',
+          display: 'flex',
+          alignItems: 'center',
+          paddingLeft: '20px',
+        }}
+      >
+        <Typography
+          variant="h5"
+          sx={{
+            fontWeight: 'bold',
+            color: '#333',
+            marginLeft: '30px'
+          }}
+        >
+          Challenge Details
+        </Typography>
+      </Box>
+
+      {/* Form Section */}
+      <Box
+        component="form"
+        noValidate
+        autoComplete="off"
+        sx={{
+          display: 'flex',
+          flexDirection: 'column',
+          gap: 3,
+          width: '50%',
+          paddingLeft: '20px',
+          mt: 4,
+          marginLeft: '30px'
+        }}
+      >
+        {/* Challenge Name */}
+        <Typography variant="subtitle1" sx={{ fontWeight: '500', color: '#333' }}>
+          Challenge Name
+        </Typography>
         <TextField
-          fullWidth
-          label="Challenge Name"
           variant="outlined"
-          sx={{ mb: 3 }}
-        />
-        <TextField
           fullWidth
-          label="Start Date"
+          required
+        />
+
+        {/* Start Date */}
+        <Typography variant="subtitle1" sx={{ fontWeight: '500', color: '#333' }}>
+          Start Date
+        </Typography>
+        <TextField
           type="date"
+          fullWidth
           InputLabelProps={{
             shrink: true,
           }}
-          variant="outlined"
-          sx={{ mb: 3 }}
         />
+
+        {/* End Date */}
+        <Typography variant="subtitle1" sx={{ fontWeight: '500', color: '#333' }}>
+          End Date
+        </Typography>
         <TextField
-          fullWidth
-          label="End Date"
           type="date"
+          fullWidth
           InputLabelProps={{
             shrink: true,
           }}
-          variant="outlined"
-          sx={{ mb: 3 }}
         />
+
+        {/* Description */}
+        <Typography variant="subtitle1" sx={{ fontWeight: '500', color: '#333' }}>
+          Description
+        </Typography>
         <TextField
-          fullWidth
-          label="Description"
+          variant="outlined"
           multiline
           rows={4}
-          variant="outlined"
-          sx={{ mb: 3 }}
+          fullWidth
         />
+
+        {/* Image Upload */}
+        <Typography variant="subtitle1" sx={{ fontWeight: '500', color: '#333' }}>
+          Image
+        </Typography>
         <Button
-          variant="contained"
+          variant="outlined"
           component="label"
-          sx={{ mb: 3 }}
+          sx={{
+            padding: '10px 20px',
+            width: '200px',
+            backgroundColor: '#F4F4F4',
+            color: '#333',
+          }}
         >
-          Upload Image
+          Upload
+          <img src={uploadIcon} alt="" style={{ marginLeft: '10px' }} /> {/* Add margin to the img */}
+          <i className="fas fa-upload" style={{ marginLeft: '10px' }} />
           <input type="file" hidden />
         </Button>
+
+
+        {/* Level Type */}
+        <Typography variant="subtitle1" sx={{ fontWeight: '500', color: '#333' }}>
+          Level Type
+        </Typography>
         <TextField
-          fullWidth
-          label="Level Type"
           select
-          variant="outlined"
-          sx={{ mb: 3 }}
+          fullWidth
+          defaultValue="Easy"
         >
           <MenuItem value="Easy">Easy</MenuItem>
           <MenuItem value="Medium">Medium</MenuItem>
           <MenuItem value="Hard">Hard</MenuItem>
         </TextField>
-        <Button variant="contained" color="primary" type="submit">
+
+        {/* Submit Button */}
+        <Button
+          variant="contained"
+          color="primary"
+          sx={{ width: '200px',backgroundColor:'#44924C' }}
+          onClick={handleClick}
+        >
           Create Challenge
         </Button>
-      </form>
-    </Container>
+      </Box>
     </>
   );
 };
 
-export default CreateChallenge;
+export default ChallengeDetails;
