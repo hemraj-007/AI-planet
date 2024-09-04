@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Box, Typography, Button, IconButton } from '@mui/material';
+import { Box, Typography, Button, IconButton, Divider } from '@mui/material';
 import SearchIcon from '@mui/icons-material/Search';
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown';
 import CloseIcon from '@mui/icons-material/Close';
@@ -71,91 +71,78 @@ export const Search: React.FC = () => {
 
             {/* Filter Dropdown */}
             {isFilterOpen && (
-                <>
-                    {/* Blurred Background */}
-                    <Box
-                        sx={{
-                            position: 'fixed',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                            backdropFilter: 'blur(5px)',
-                            zIndex: 10, // Ensure the background overlay is behind the dropdown
-                        }}
-                        onClick={handleToggleFilter} // Close dropdown when background is clicked
-                    />
-
-                    {/* Dropdown Content */}
-                    <Box
-                        sx={{
-                            position: 'absolute',
-                            top: '100px',
-                            right: '50px',
-                            backgroundColor: '#ffffff',
-                            borderRadius: '10px',
-                            padding: '20px',
-                            zIndex: 20, // Ensure the dropdown is above the background
-                            width: '300px',
-                            textAlign: 'left',
-                        }}
+                <Box
+                    sx={{
+                        position: 'absolute',
+                        top: '120px',
+                        right: '50px',
+                        backgroundColor: '#ffffff',
+                        borderRadius: '10px',
+                        padding: '20px',
+                        width: '250px',
+                        boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)', // Subtle shadow
+                        zIndex: 20, // Ensure the dropdown is above other elements
+                    }}
+                >
+                    {/* Close Button */}
+                    <IconButton
+                        sx={{ position: 'absolute', top: '10px', right: '10px' }}
+                        onClick={handleToggleFilter}
                     >
-                        {/* Close Button */}
-                        <IconButton
-                            sx={{ position: 'absolute', top: '10px', right: '10px' }}
-                            onClick={handleToggleFilter}
-                        >
-                            <CloseIcon />
-                        </IconButton>
+                        <CloseIcon />
+                    </IconButton>
 
-                        <Typography variant="h6" sx={{ mb: 2 ,color:'black'}}>
-                            Filter
-                        </Typography>
+                    {/* Filter Title */}
+                    <Typography variant="h6" sx={{ mb: 2, color: 'black', fontWeight: 'bold' }}>
+                        Filter
+                    </Typography>
 
-                         {/* Status Filter */}
-                    <Typography variant="body1" sx={{ mb: 1 }}>
+                    <Divider sx={{ mb: 2 }} />
+
+                    {/* Status Filter */}
+                    <Typography variant="body1" sx={{ mb: 1, fontWeight: 'bold', color: '#333' }}>
                         Status
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column', mb: 2 }}> {/* Stacking checkboxes vertically */}
-                        <label style={{ color: 'black' }}> {/* Label text in black */}
-                            <input type="checkbox" />
+                    <Box sx={{ display: 'flex', flexDirection: 'column', mb: 2 }}>
+                        <label style={{ color: '#333', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                            <input type="checkbox" style={{ marginRight: '8px' }} />
                             All
                         </label>
-                        <label style={{ color: 'black' }}> {/* Label text in black */}
-                            <input type="checkbox" />
+                        <label style={{ color: '#333', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                            <input type="checkbox" style={{ marginRight: '8px' }} />
                             Active
                         </label>
-                        <label style={{ color: 'black' }}> {/* Label text in black */}
-                            <input type="checkbox" />
+                        <label style={{ color: '#333', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                            <input type="checkbox" style={{ marginRight: '8px' }} />
                             Upcoming
                         </label>
-                        <label style={{ color: 'black' }}> {/* Label text in black */}
-                            <input type="checkbox" />
+                        <label style={{ color: '#333', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                            <input type="checkbox" style={{ marginRight: '8px' }} />
                             Past
                         </label>
                     </Box>
 
+                    <Divider sx={{ mb: 2 }} />
+
                     {/* Level Filter */}
-                    <Typography variant="body1" sx={{ mb: 1 }}>
+                    <Typography variant="body1" sx={{ mb: 1, fontWeight: 'bold', color: '#333' }}>
                         Level
                     </Typography>
-                    <Box sx={{ display: 'flex', flexDirection: 'column' }}> {/* Stacking checkboxes vertically */}
-                        <label style={{ color: 'black' }}> {/* Label text in black */}
-                            <input type="checkbox" />
+                    <Box sx={{ display: 'flex', flexDirection: 'column' }}>
+                        <label style={{ color: '#333', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                            <input type="checkbox" style={{ marginRight: '8px' }} />
                             Easy
                         </label>
-                        <label style={{ color: 'black' }}> {/* Label text in black */}
-                            <input type="checkbox" />
+                        <label style={{ color: '#333', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                            <input type="checkbox" style={{ marginRight: '8px' }} />
                             Medium
                         </label>
-                        <label style={{ color: 'black' }}> {/* Label text in black */}
-                            <input type="checkbox" />
+                        <label style={{ color: '#333', marginBottom: '8px', display: 'flex', alignItems: 'center' }}>
+                            <input type="checkbox" style={{ marginRight: '8px' }} />
                             Hard
                         </label>
                     </Box>
                 </Box>
-                </>
             )}
         </Box>
     );

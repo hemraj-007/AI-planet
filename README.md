@@ -35,6 +35,11 @@ To get the project up and running locally, follow these steps:
    ```bash
    git clone https://github.com/your-username/hackathon-frontend.git
 
-2. **npm install or yarn install**
+2. **Install dependencies:**
 
-3. **Start the development server:**npm run dev
+   ```bash
+   npm install or yarn intsall
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
